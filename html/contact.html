@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- Stylesheet link -->
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+      var divs = new Array();
+      divs[0] = "errFirst";
+      divs[1] = "errLast";
+      divs[2] = "errEmail";
+     
+      function validate()
+      {
+        var inputs = new Array();
+        inputs[0] = document.getElementById('first').value;
+        inputs[1] = document.getElementById('last').value;
+        inputs[2] = document.getElementById('email').value;
+        
+        var errors = new Array();
+        errors[0] = "<span style='color:red'>Please enter your first name!</span>";
+        errors[1] = "<span style='color:red'>Please enter your last name!</span>";
+        errors[2] = "<span style='color:red'>Please enter your email!</span>";
+        
+        for (i in inputs)
+        {
+          var errMessage = errors[i];
+          var div = divs[i];
+          if (inputs[i] == "")
+            document.getElementById(div).innerHTML = errMessage;
+          else if (i==2)
+          {
+            var atpos=inputs[i].indexOf("@");
+            var dotpos=inputs[i].lastIndexOf(".");
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=inputs[i].length)
+            document.getElementById('errEmail').innerHTML = "<span style='color: red'>Enter a valid email address!</span>";
+            else
+            document.getElementById(div).innerHTML = "OK!";
+          }
+          else if (i==2)
+          {
+            var first = document.getElementById('password').value;
+            var second = document.getElementById('confirm').value;
+            if (second != first)
+            document.getElementById('errConfirm').innerHTML = "<span style='color: red'>Your passwords don't match!</span>";
+            else
+             document.getElementById(div).innerHTML = "OK!";
+          }
+          else
+            document.getElementById(div).innerHTML = "OK!";
+         }
+       }
+          function finalValidate()
+          {
+            var count = 0;
+            for(i=0;i<3;i++)
+            {
+              var div = divs[i];
+              if(document.getElementById(div).innerHTML == "OK!")
+              count = count + 1;
+            }
+            if(count == 3)
+              document.getElementById("errFinal").innerHTML = "All the data you entered is correct!!!";
+          }
+     </script>
+
+</head>
+<body>
+
+<div class="header">
+  <img src="images/logo2.png" alt="logo">
+  <h2></h2>
+</div>
+<div class="topnav">
+  <nav>
+    <ul class="nav__ul">
+      <a href="home.html"><li>Home</li></a>
+      <a href="portfolio.html"><li>Portfolio</li></a>
+      <a href="resume.html"><li>Resume</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+    </ul>
+  </nav>
+  <div class="social__wrapper">
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a
+    ><a href="#"
+      ><i class="fa fa-facebook-square" aria-hidden="true"></i></a
+    ><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+  </div>
+</div>
+<div class="row">
+
+	<div class="rightcolumn__resume"><p><h4>Firouzeh Tahbaz</h4><br>
+		Address: 828 Sutton Mills Court, Apt. 806<br>Kingston, Ontario<br>K7P 2S9<br>Phone:343 333 7470<br>Email: firouzeh@firouzehtahbaz.com<br></p>
+	</div>
+	
+    <div class="leftcolumn__resume">
+		<p>Send me a message:</p>
+		<table id="table1">
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text" id="first" onkeyup="validate();" /></td>
+        <td><div id="errFirst"></div></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><input type="text" id="last" onkeyup="validate();"/></td>
+        <td><div id="errLast"></div></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" id="email" onkeyup="validate();"/></td>
+        <td><div id="errEmail"></div></td>
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td><input type="button" id="create" value="Submit" onclick="validate();finalValidate();"/></td>
+        <td><div id="errFinal"></div></td>
+      </tr>
+	</table>
+</div>
+		</div>
+    <div class="footer">
+      <div class="social__wrapper">
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a
+        ><a href="#"
+          ><i class="fa fa-facebook-square" aria-hidden="true"></i></a
+        ><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+ 
+</body>
+</html>
