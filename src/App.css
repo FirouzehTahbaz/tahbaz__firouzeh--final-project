@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  background-color: black;
+}
+.header {
+  padding: 30px;
+  text-align: left;
+  color: #f1f1f1;
+  /* background-image: url(images/linkedin.jpg); */
+  background-image: url(./assets/image/linkedin.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* fontawesome icon - instagram , facebook, youtube sizes  */
+.fa {
+  font-size: 25px;
+}
+.bg {
+  /* The image  */
+  /* background-image: url("images/profile.jpg"); */
+  background-image: url(./assets/image/profile.jpg);
+  /* Full height */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Top navigation bar */
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: peru;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.nav__ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  height: 55px;
+  padding: 0;
+}
+
+.nav__ul li {
+  margin: 0px 15px;
+  padding: 0;
+}
+
+.submit__btn {
+  margin-bottom: 10px;
+}
+
+.nav__ul a {
+  text-decoration: none;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+}
+
+.nav__ul a:hover {
+  background-color: white;
+  color: black;
+}
+
+.social__wrapper a {
+  margin: 0px 15px;
+  color: white;
+}
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+  position: relative;
+  background-position: center; /* Centered image */
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+.bgimg-1 {
+  /* background-image: url(images/profile.jpg); */
+  background-image: url(./assets/image/profile.jpg);
+  height: calc(100vh - 75px);
+}
+
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
+  text-align: center;
+  color: white;
+  font: bolder;
+  background-color: rgba(5, 5, 5, 0.6);
+}
+
+.caption span.border {
+  background-color: transparent;
+  color: #fff;
+  display: inline-block;
+  margin: 10px;
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: 10px;
+}
+
+.intro__paragraph {
+  letter-spacing: 3px;
+  line-height: 30px;
+}
+
+.resumeBtn__wrapper {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font: 15px "Montserrat", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  background-color: peru;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: white;
+  color: peru;
+}
+
+.leftcolumn__resume {
+  float: left;
+  width: 50%;
+  background-color: #f1d7cc;
+  padding-left: 30px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+.rightcolumn__resume {
+  float: left;
+  width: 50%;
+  background-color: #f1d7cc;
+  padding-left: 50px;
+  padding-right: 20px;
+  padding-top: 85px;
+  margin-top: 20px;
+}
+
+.leftcolumn {
+  float: left;
+  width: 100%;
+}
+
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: black;
+  padding-left: 20px;
+}
+
+.card {
+  background-color: #f1d7cc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button__wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button__wrapper a {
+  margin: 0px 5px 0px 0px;
+}
+
+.email__wrapper {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.password__wrapper {
+  margin-bottom: 10px;
+  position: relative;
+}
+.error {
+  position: absolute;
+  margin-left: 10px;
+}
+
+.email__wrapper label {
+  width: 100px;
+  display: inline-block;
+}
+
+.password__wrapper label {
+  width: 100px;
+  display: inline-block;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: peru;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 1440px wide, make the navigation links stack on top of each other instead of next to each other */
+
+/* For Laptop with large screen */
+@media only screen and (max-width: 1440px) {
+  /* incresed nav size for better readability */
+  .nav__ul {
+    height: 80px;
+    font-size: 22px;
+  }
+
+  /* social icon size increased */
+  .fa {
+    font-size: 35px;
+  }
+
+  /* paragraph at home page font size increased */
+  .intro__paragraph {
+    font-size: 22px;
+  }
+
+  .button {
+    font-size: 22px;
+  }
+}
+
+/* For Laptop Normal Screen */
+@media only screen and (max-width: 1024px) {
+  .button__wrapper a {
+    margin: 10px 0px 0px 0px;
+  }
+}
+
+/* for Tablet */
+@media only screen and (max-width: 768px) {
+}
+
+/* for large mobile */
+@media only screen and (max-width: 425px) {
+}
+/* for Medium Mobile */
+@media only screen and (max-width: 375px) {
+
+}
+/* for Small Mobile */
+@media only screen and (max-width: 320px) {
+}
